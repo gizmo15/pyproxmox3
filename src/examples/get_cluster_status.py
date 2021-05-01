@@ -11,7 +11,7 @@ from urllib3.exceptions import InsecureRequestWarning
 from proxmox import ProxAuth, PyProxmox
 
 # Read conf.ini
-INI_CONF = "./proxmox_api.ini"
+INI_CONF = "../proxmox_api.ini"
 
 if not pathlib.Path(INI_CONF).exists():
     print("Config file not found!")
@@ -36,6 +36,3 @@ STATUS = PROXMOX_EXEC.get_cluster_status()
 RESULT_STATUS = json.dumps(STATUS["data"], indent=4, sort_keys=True)
 print("Check connexion : ")
 print(RESULT_STATUS)
-
-NEXT_ID = PROXMOX_EXEC.get_cluster_vm_next_id()
-print("Next ID : {}".format(json.loads(NEXT_ID)["data"]))

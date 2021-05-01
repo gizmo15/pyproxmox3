@@ -1,3 +1,4 @@
 **/*.ini
 *.swp
 **/__pycache__
+**tests
