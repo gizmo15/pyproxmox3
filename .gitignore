@@ -1,0 +1,3 @@
+**/*.ini
+*.swp
+**/__pycache__

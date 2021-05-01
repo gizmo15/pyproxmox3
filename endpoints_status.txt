@@ -1,0 +1,83 @@
+def get_cluster_status(self):                               OK
+def get_cluster_backup_schedule(self):                      OK
+def get_cluster_vm_next_id(self):                           OK
+def get_cluster_node_list(self):                            OK
+def get_cluster_log(self):                                  OK
+def get_node_networks(self, node):                          OK
+def get_node_interface(self, node, interface):              OK
+def get_node_container_index(self, node):                   KO - "Method \'GET /nodes/r610/openvz\' not implemented"
+def get_node_virtual_index(self, node):                     OK
+def get_node_service_list(self, node):                      OK
+def get_node_service_state(self, node, service):            OK
+def get_node_storage(self, node):                           OK
+def get_node_finished_tasks(self, node):                    OK
+def get_node_dns(self, node):                               OK
+def get_node_status(self, node):                            OK
+def get_node_syslog(self, node):                            OK
+def get_node_rrd(self, node):                               KO - "reason": "Parameter verification failed."
+def get_node_rrd_data(self, node):                          KO - "reason": "Parameter verification failed."
+def get_node_beans(self, node):                             KO - "reason": "Method \'GET /nodes/r610/ubfailcnt\' not implemented"
+def get_node_task_by_upid(self, node, upid):                -
+def get_node_task_log_by_upid(self, node, upid):            -
+def get_node_task_status_by_upid(self, node, upid):         -
+def get_node_scan_methods(self, node):                      OK
+def get_remote_iscsi(self, node):                           KO - "reason": "Parameter verification failed."
+def get_node_lvmgroups(self, node):                         OK
+def get_remote_nfs(self, node):                             KO - "reason": "Parameter verification failed."
+def get_node_usb(self, node):                               OK
+def get_cluster_acl(self):                                  OK
+def get_container_index(self, node, vmid):                  -
+def get_container_status(self, node, vmid):                 -
+def get_container_beans(self, node, vmid):                  -
+def get_container_config(self, node, vmid):                 -
+def get_container_init_log(self, node, vmid):               -
+def get_container_rrd(self, node, vmid):                    -
+def get_container_rrd_data(self, node, vmid):               -
+def get_virtual_index(self, node, vmid):                    OK
+def get_virtual_status(self, node, vmid):                   OK
+def get_virtual_config(self, node, vmid, current=False):    OK
+def get_virtual_rrd(self, node, vmid):                      KO - "reason": "Parameter verification failed."
+def get_virtual_rrd_data(self, node, vmid):                 KO - "reason": "Parameter verification failed."
+def get_storage_volume_data(self, node, storage, volume):   KO - tester les paramètres à passer
+def get_storage_config(self, storage):                      OK
+def get_node_storage_content(self, node, storage):          OK
+def get_node_storage_rrd(self, node, storage):              KO - "reason": "Parameter verification failed."
+def get_node_storage_rrd_data(self, node, storage):         KO - "reason": "Parameter verification failed."
+def create_openvz_container(self, node, post_data):         -
+def mount_openvz_private(self, node, vmid):                 -
+def shutdown_openvz_container(self, node, vmid):            -
+def start_openvz_container(self, node, vmid):               -
+def stop_openvz_container(self, node, vmid):                -
+def unmount_openvz_private(self, node, vmid):               -
+def migrate_openvz_container(self, node, vmid, target):     -
+def create_virtual_machine(self, node, post_data):          OK
+def clone_virtual_machine(self, node, vmid, post_data):     -
+def reset_virtual_machine(self, node, vmid):                OK 
+def resume_virtual_machine(self, node, vmid):               OK
+def shutdown_virtual_machine(self, node, vmid):             OK
+def start_virtual_machine(self, node, vmid):                OK
+def stop_virtual_machine(self, node, vmid):                 OK
+def suspend_virtual_machine(self, node, vmid):              OK
+def migrate_virtual_machine(self, node, vmid, target, online=False, force=False):
+def monitor_virtual_machine(self, node, vmid, command):     -
+def vncproxy_virtual_machine(self, node, vmid):             OK
+def rollback_virtual_machine(self, node, vmid, snapname):   OK
+def get_snapshot_config_virtual_machine(self, node, vmid, snapname): OK
+def get_snapshots_virtual_machine(self, node, vmid):                 OK
+def create_snapshot_virtual_machine(self, node, vmid, snapname, description='', vmstate=False): OK
+def delete_openvz_container(self, node, vmid):              -
+def delete_node_network_config(self, node):                 -
+def delete_node_interface(self, node, interface):           -
+def delete_virtual_machine(self, node, vmid):               -
+def delete_snapshot_virtual_machine(self, node, vmid, title, force=False): -
+def delete_pool(self, poolid):                              -
+def delete_storage_configuration(self, storageid):          -
+def set_node_dns_domain(self, node, domain):                -
+def set_node_subscription_key(self, node, key):             -
+def set_node_time_zone(self, node, timezone):               -
+def set_openvz_container_options(self, node, vmid, post_data):      -
+def set_virtual_machine_options(self, node, vmid, post_data):       OK 
+def send_key_event_virtual_machine(self, node, vmid, key):  -
+def unlink_virtual_machine_disk_image(self, node, vmid, post_data): -
+def set_pool_data(self, poolid, post_data):                 -
+def update_storage_configuration(self, storageid, post_data): -
