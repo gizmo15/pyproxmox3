@@ -616,9 +616,9 @@ class PyProxmox:
         return data_json
 
     # NODE
-    def delete_node_network_config(self, node):
+    def delete_node_network_config(self, node, vmbr):
         """Revert network configuration changes. Returns JSON"""
-        data = self.connect('delete', 'nodes/{}/network'.format(node), None)
+        data = self.connect('delete', 'nodes/{}/network/{}'.format(node, vmbr), None)
         data_json = json.dumps(data, indent=4, sort_keys=True)
         return data_json
 
