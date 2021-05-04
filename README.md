@@ -118,6 +118,7 @@ For more information on the accepted variables please see http//pve.proxmox.com/
 
 		get_node_rrd(node)
 "Read node RRD statistics. Returns PNG"
+Ex: POST_DATA = {'node': 'r610'}"
 
 		get_node_rrd_data(node)
 "Read node RRD statistics. Returns RRD"
@@ -189,7 +190,7 @@ For more information on the accepted variables please see http//pve.proxmox.com/
 		create_snapshot_virtual_machine(node, vmid, snapname, description='')
 "Create Snapshot from VM. Returns JSON"
 
-		delete_snapshot_virtual_machine(node, vmid, title, force=False)
+		delete_snapshot_virtual_machine(node, vmid, snapname, force=False)
 "Destroy the vm snapshot (also delete all used/owned volumes). Returns JSON"
 
 ##### Storage Methods
@@ -282,9 +283,13 @@ Ex: POST_DATA = {'name':'test2.example.org', 'newid':'9002'}"
 "Create network device. Returns JSON
 Ex: POST_DATA = {'iface': 'vmbr5', 'type': 'bridge'}"
 
-		reload_node_network(node)
+		reload_node_network(node, post_data)
 "Reload network configuration. Returns JSON
 Ex: POST_DATA = {'node': 'r610'}"
+
+		reload_node_iface(node, iface, post_data)
+"Reload network configuration. Returns JSON
+Ex: POST_DATA = {'iface': IFACE, 'node': NODE, 'type': 'bridge'}"
 
 #### DELETE Methods
     

@@ -600,9 +600,16 @@ class PyProxmox:
         data_json = json.dumps(data, indent=4, sort_keys=True)
         return data_json
 
-    def reload_node_network(self, node, post_data):
-        """Create network device. Returns JSON"""
+    def reload_node_network(self, node):
+        """Reload all network. Returns JSON"""
         data = self.connect('put', 'nodes/{}/network'.format(node),
+                            None)
+        data_json = json.dumps(data, indent=4, sort_keys=True)
+        return data_json
+
+    def reload_node_iface(self, node, iface, post_data):
+        """Reload specific iface. Returns JSON"""
+        data = self.connect('put', 'nodes/{}/network/{}'.format(node, iface),
                             post_data)
         data_json = json.dumps(data, indent=4, sort_keys=True)
         return data_json
@@ -635,7 +642,7 @@ class PyProxmox:
         data_json = json.dumps(data, indent=4, sort_keys=True)
         return data_json
 
-    def delete_snapshot_virtual_machine(self, node, vmid, title, force=False):
+    def delete_snapshot_virtual_machine(self, node, vmid, snapname, force=False):
         """Destroy the vm snapshot (also delete all used/owned volumes). Returns JSON
            :param force: (Boolean) For removal from config file,
                                    even if removing disk snapshots fails. """
@@ -643,7 +650,7 @@ class PyProxmox:
         if force:
             post_data = {}
             post_data['force'] = '1'
-        data = self.connect('delete', 'nodes/{}/qemu/{}/snapshot/{}'.format(node, vmid, title),
+        data = self.connect('delete', 'nodes/{}/qemu/{}/snapshot/{}'.format(node, vmid, snapname),
                             post_data)
         data_json = json.dumps(data, indent=4, sort_keys=True)
         return data_json
