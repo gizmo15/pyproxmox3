@@ -124,8 +124,8 @@ class PyProxmox:
         try:
             self.returned_data = self.response.json()
             self.returned_data.update({'status': {'code': self.response.status_code,
-                                                  'ok': self.response.ok,
-                                                  'reason': self.response.reason}})
+                                                'ok': self.response.ok,
+                                                'reason': self.response.reason}})
             return self.returned_data
         except json.JSONDecodeError:
             print("Error in trying to process JSON")
@@ -239,17 +239,17 @@ class PyProxmox:
         data_json = json.dumps(data, indent=4, sort_keys=True)
         return data_json
 
-    def get_node_rrd(self, node):
+    def get_node_rrd(self, node, post_data):
         """Read node RRD statistics. Returns PNG"""
-        data = self.connect('get', 'nodes/{}/rrd'.format(node), None)
+        data = self.connect('get', 'nodes/{}/rrd'.format(node), post_data)
         data_json = json.dumps(data, indent=4, sort_keys=True)
         return data_json
 
-    def get_node_rrd_data(self, node):
+    def get_node_rrd_data(self, node, post_data):
         """Read node RRD statistics. Returns RRD"""
-        data = self.connect('get', 'nodes/{}/rrddata'.format(node), None)
-        data_json = json.dumps(data, indent=4, sort_keys=True)
-        return data_json
+        data = self.connect('get', 'nodes/{}/rrddata'.format(node), post_data)
+        #data_json = json.dumps(data, indent=4, sort_keys=True)
+        return data
 
     def get_node_task_by_upid(self, node, upid):
         """Get tasks by UPID. Returns JSON"""
