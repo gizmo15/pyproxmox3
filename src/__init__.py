@@ -14,7 +14,7 @@
 import sys
 
 # Global name
-__version__ = '0.0.1'
+__version__ = '1.0.0'
 __author__ = 'Boris Tassou <boris.tassou@securmail.fr>'
 __license__ = 'Beerware'
 

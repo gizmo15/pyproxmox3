@@ -9,16 +9,16 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pyproxmox3",
-    version="0.0.1",
+    version="1.0.0",
     author="Boris Tassou",
     author_email="boris.tassou@securmail.fr",
     description="""Handle proxmox operations via api""",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
+    url="https://github.com/gizmo15/pyproxmox3",
     py_modules=['pyproxmox3'],
     project_urls={
-        "Bug Tracker": "https://github.com/pypa/sampleproject/issues",
+        "Bug Tracker": "https://github.com/gizmo15/pyproxmox3/issues",
     },
     classifiers=[
         "Programming Language :: Python :: 3",
