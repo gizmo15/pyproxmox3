@@ -404,6 +404,12 @@ class PyProxmox:
         data_json = json.dumps(data, indent=4, sort_keys=True)
         return data_json
 
+    def allocate_node_storage_vm(self, node, storage, post_data):
+        """Create disk for a specific VM. Returns JSON"""
+        data = self.connect('post', 'nodes/{}/storage/{}/content'.format(node, storage), post_data)
+        data_json = json.dumps(data, indent=4, sort_keys=True)
+        return data_json
+
     # Methods using the POST protocol to communicate with the Proxmox API.
     # LXC Methods
     def create_lxc_container(self, node, post_data):

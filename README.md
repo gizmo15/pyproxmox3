@@ -210,7 +210,6 @@ Ex: POST_DATA = {'node': 'r610'}"
 		get_node_storage_rrd_data(node, storage)
 "Read storage RRD statistics. Returns JSON"
 
-
 #### POST Methods
 
 	
@@ -291,6 +290,10 @@ Ex: POST_DATA = {'node': 'r610'}"
 "Reload network configuration. Returns JSON
 Ex: POST_DATA = {'iface': IFACE, 'node': NODE, 'type': 'bridge'}"
 
+##### Storage Methods
+
+		allocate_node_storage_vm(node, storage, post_data)
+"Create disk for a specific VM. Returns JSON"
 #### DELETE Methods
     
 ##### LXC
