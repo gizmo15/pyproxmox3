@@ -339,6 +339,12 @@ class PyProxmox:
         return data_json
 
     # KVM Methods
+    def get_virtual_list(self, node):
+        """List virtual machine. Returns JSON"""
+        data = self.connect('get', 'nodes/{}/qemu'.format(node), None)
+        data_json = json.dumps(data, indent=4, sort_keys=True)
+        return data_json
+
     def get_virtual_index(self, node, vmid):
         """Directory index. Returns JSON"""
         data = self.connect('get', 'nodes/{}/qemu/{}'.format(node, vmid), None)
