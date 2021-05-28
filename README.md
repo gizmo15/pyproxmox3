@@ -70,16 +70,16 @@ For more information on the accepted variables please see http//pve.proxmox.com/
 		get_cluster_backup_schedule()
 "List vzdump backup schedule. Returns JSON"
 
-      get_cluster_vm_next_id()
+		get_cluster_vm_next_id()
 "Get next VM ID of cluster. Returns JSON"
 
-      get_cluster_node_list()
+		get_cluster_node_list()
 "Node list. Returns JSON"
 
-      get_cluster_log()
+		get_cluster_log()
 "log from Cluster. Returns JSON"
 
-      get_cluster_acl()
+		get_cluster_acl()
 "ACL from Cluster. Returns JSON"
 
 ##### Node Methods
@@ -168,6 +168,8 @@ Ex: POST_DATA = {'node': 'r610'}"
 "Read VM RRD statistics. Returns RRD"
 
 ##### KVM Methods
+		get_virtual_list(node)
+"List virtual machine. Returns JSON"
 
 		get_virtual_index(node, vmid)
 "Directory index. Returns JSON"
