@@ -168,6 +168,8 @@ Ex: POST_DATA = {'node': 'r610'}"
 "Read VM RRD statistics. Returns RRD"
 
 ##### KVM Methods
+		get_virtual_list(node)
+"List virtual machine. Returns JSON"
 
 		get_virtual_index(node, vmid)
 "Directory index. Returns JSON"
