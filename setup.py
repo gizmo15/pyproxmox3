@@ -8,8 +8,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="pyproxmox3-pkg-gizmo",
-    version="1.0.0_4",
+    name="pyproxmox3",
+    version="1.0.0_2",
     author="Boris Tassou",
     author_email="boris.tassou@securmail.fr",
     description="""Handle proxmox operations via api""",
