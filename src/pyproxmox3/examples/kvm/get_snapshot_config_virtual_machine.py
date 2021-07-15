@@ -8,7 +8,7 @@ import pathlib
 from configparser import ConfigParser
 from urllib3 import disable_warnings
 from urllib3.exceptions import InsecureRequestWarning
-from proxmox import ProxAuth, PyProxmox
+from pyproxmox3 import ProxAuth, PyProxmox
 
 # Read conf.ini
 INI_CONF = "./proxmox_api.ini"
