@@ -209,9 +209,9 @@ class PyProxmox:
         data_json = json.dumps(data, indent=4, sort_keys=True)
         return data_json
 
-    def get_node_storage(self, node):
+    def get_node_storage(self, node, storage=None):
         """Get status for all datastores. Returns JSON"""
-        data = self.connect('get', 'nodes/{}/storage'.format(node), None)
+        data = self.connect('get', 'nodes/{}/storage'.format(node), storage)
         data_json = json.dumps(data, indent=4, sort_keys=True)
         return data_json
 
