@@ -6,13 +6,13 @@ Update to py3 and Proxmox 6 from https//github.com/Daemonthread/pyproxmox
 
 ### Installation and dependency
     
-    pip install pyproxmox requests
+    pip install pyproxmox3 requests
 
 ###### Example usage
 
 1. Import everything from the module
 
-		from proxmox import ProxAuth, PyProxmox
+		from pyproxmox3 import ProxAuth, PyProxmox
 
 2. Create an instance of the prox_auth class by passing in the
 url or ip of a server in the cluster, username and password
