@@ -148,6 +148,12 @@ class PyProxmox:
         data_json = json.dumps(data, indent=4, sort_keys=True)
         return json.loads(data_json)
 
+    def get_cluster_resources(self):
+        """Get cluster resources. Returns JSON"""
+        data = self.connect('get', 'cluster/resources', None)
+        data_json = json.dumps(data, indent=4, sort_keys=True)
+        return json.loads(data_json)
+
     def get_cluster_backup_schedule(self):
         """List vzdump backup schedule. Returns JSON"""
         data = self.connect('get', 'cluster/backup', None)
@@ -667,13 +673,6 @@ class PyProxmox:
         data_json = json.dumps(data, indent=4, sort_keys=True)
         return data_json
 
-    # POOLS
-    def delete_pool(self, poolid):
-        """Delete Pool. Returns JSON"""
-        data = self.connect('delete', 'pools/{}'.format(poolid), None)
-        data_json = json.dumps(data, indent=4, sort_keys=True)
-        return data_json
-
     # STORAGE
     def delete_storage_configuration(self, storageid):
         """Delete storage configuration. Returns JSON"""
@@ -732,6 +731,18 @@ class PyProxmox:
         return data_json
 
     # POOLS
+    def list_pools(self):
+        """List all pool. Returns JSON"""
+        data = self.connect('get', 'pools', None)
+        data_json = json.dumps(data, indent=4, sort_keys=True)
+        return data_json
+
+    def get_pool_content(self, poolid):
+        """Get Pool content. Returns JSON"""
+        data = self.connect('get', 'pools/{}'.format(poolid), None)
+        data_json = json.dumps(data, indent=4, sort_keys=True)
+        return data_json 
+
     def create_pool(self, post_data):
         """Create pool. Returns JSON"""
         data = self.connect('post', 'pools', post_data)
@@ -741,6 +752,12 @@ class PyProxmox:
     def set_pool_data(self, poolid, post_data):
         """Update pool data. Returns JSON"""
         data = self.connect('put', 'pools/{}'.format(poolid), post_data)
+        data_json = json.dumps(data, indent=4, sort_keys=True)
+        return data_json
+
+    def delete_pool(self, poolid):
+        """Delete Pool. Returns JSON"""
+        data = self.connect('delete', 'pools/{}'.format(poolid), None)
         data_json = json.dumps(data, indent=4, sort_keys=True)
         return data_json
 
