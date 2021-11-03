@@ -277,9 +277,6 @@ Ex: POST_DATA = {'name':'test2.example.org', 'newid':'9002'}"
 		get_snapshot_config_virtual_machine(node, vmid, snapname)
 "Get snapshot config of a virtual machine. Returns JSON"
 
-		create_pool(post_data)
-"Create pool. Returns JSON"
-
 		create_node_network(node, post_data)
 "Create network device. Returns JSON
 Ex: POST_DATA = {'iface': 'vmbr5', 'type': 'bridge'}"
@@ -317,6 +314,18 @@ Ex: POST_DATA = {'iface': IFACE, 'node': NODE, 'type': 'bridge'}"
 "Destroy the vm (also delete all used/owned volumes)."
         
 ##### POOLS
+		list_pools()
+"List all pool. Returns JSON"
+
+		get_pool_content(poolid)
+"Get Pool content. Returns JSON"
+
+		create_pool(post_data)
+"Create pool. Returns JSON"
+
+		set_pool_data(poolid, post_data)
+"Update pool data."
+
 		delete_pool(poolid)
 "Delete Pool"
 
@@ -350,11 +359,7 @@ Ex: POST_DATA = {'iface': IFACE, 'node': NODE, 'type': 'bridge'}"
 		unlink_virtual_machine_disk_image(node, vmid, post_data)
 "Unlink disk images
 Ex: POST_DATA = {'idlist': 'ide0'}"
- 
-##### POOLS
-		set_pool_data(poolid, post_data)
-"Update pool data."
- 
+
 ##### STORAGE
 		update_storage_configuration(storageid, post_data)
 "Update storage configuration"
