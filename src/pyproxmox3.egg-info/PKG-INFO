@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: pyproxmox3
-Version: 1.0.0
+Version: 1.0.0-2
 Summary: Handle proxmox operations via api
 Home-page: https://github.com/gizmo15/pyproxmox3
 Author: Boris Tassou
