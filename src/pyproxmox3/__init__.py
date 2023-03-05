@@ -179,6 +179,12 @@ class PyProxmox:
         return data_json
 
     # Node Methods
+    def get_node_config(self, node):
+        """Get node config. Returns JSON"""
+        data = self.connect('get', 'nodes/{}/config'.format(node), None)
+        data_json = json.dumps(data, indent=4, sort_keys=True)
+        return data_json
+
     def get_node_networks(self, node):
         """List available networks. Returns JSON"""
         data = self.connect('get', 'nodes/{}/network'.format(node), None)

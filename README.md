@@ -1,8 +1,8 @@
 pyproxmox
 =========
 
-Update to py3 and Proxmox 6 from https//github.com/Daemonthread/pyproxmox
-## A Python wrapper for the Proxmox 6.x API
+Update to py3 and Proxmox 6/7 from https//github.com/Daemonthread/pyproxmox
+## A Python wrapper for the Proxmox 6.x and 7.x API
 
 ### Installation and dependency
     
@@ -83,6 +83,9 @@ For more information on the accepted variables please see http//pve.proxmox.com/
 "ACL from Cluster. Returns JSON"
 
 ##### Node Methods
+		get_node_config(node)
+"List available networks. Returns JSON"
+
 		get_node_networks(node)
 "List available networks. Returns JSON"
   
