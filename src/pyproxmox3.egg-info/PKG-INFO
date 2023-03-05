@@ -1,13 +1,11 @@
 Metadata-Version: 2.1
 Name: pyproxmox3
-Version: 1.0.0-2
+Version: 1.0.1
 Summary: Handle proxmox operations via api
 Home-page: https://github.com/gizmo15/pyproxmox3
 Author: Boris Tassou
 Author-email: boris.tassou@securmail.fr
-License: UNKNOWN
 Project-URL: Bug Tracker, https://github.com/gizmo15/pyproxmox3/issues
-Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
 Classifier: Operating System :: OS Independent
@@ -18,18 +16,18 @@ License-File: LICENSE
 pyproxmox
 =========
 
-Update to py3 and Proxmox 6 from https//github.com/Daemonthread/pyproxmox
-## A Python wrapper for the Proxmox 6.x API
+Update to py3 and Proxmox 6/7 from https//github.com/Daemonthread/pyproxmox
+## A Python wrapper for the Proxmox 6.x and 7.x API
 
 ### Installation and dependency
     
-    pip install pyproxmox requests
+    pip install pyproxmox3 requests
 
 ###### Example usage
 
 1. Import everything from the module
 
-		from proxmox import ProxAuth, PyProxmox
+		from pyproxmox3 import ProxAuth, PyProxmox
 
 2. Create an instance of the prox_auth class by passing in the
 url or ip of a server in the cluster, username and password
@@ -100,6 +98,9 @@ For more information on the accepted variables please see http//pve.proxmox.com/
 "ACL from Cluster. Returns JSON"
 
 ##### Node Methods
+		get_node_config(node)
+"List available networks. Returns JSON"
+
 		get_node_networks(node)
 "List available networks. Returns JSON"
   
@@ -294,9 +295,6 @@ Ex: POST_DATA = {'name':'test2.example.org', 'newid':'9002'}"
 		get_snapshot_config_virtual_machine(node, vmid, snapname)
 "Get snapshot config of a virtual machine. Returns JSON"
 
-		create_pool(post_data)
-"Create pool. Returns JSON"
-
 		create_node_network(node, post_data)
 "Create network device. Returns JSON
 Ex: POST_DATA = {'iface': 'vmbr5', 'type': 'bridge'}"
@@ -334,6 +332,18 @@ Ex: POST_DATA = {'iface': IFACE, 'node': NODE, 'type': 'bridge'}"
 "Destroy the vm (also delete all used/owned volumes)."
         
 ##### POOLS
+		list_pools()
+"List all pool. Returns JSON"
+
+		get_pool_content(poolid)
+"Get Pool content. Returns JSON"
+
+		create_pool(post_data)
+"Create pool. Returns JSON"
+
+		set_pool_data(poolid, post_data)
+"Update pool data."
+
 		delete_pool(poolid)
 "Delete Pool"
 
@@ -367,13 +377,7 @@ Ex: POST_DATA = {'iface': IFACE, 'node': NODE, 'type': 'bridge'}"
 		unlink_virtual_machine_disk_image(node, vmid, post_data)
 "Unlink disk images
 Ex: POST_DATA = {'idlist': 'ide0'}"
- 
-##### POOLS
-		set_pool_data(poolid, post_data)
-"Update pool data."
- 
+
 ##### STORAGE
 		update_storage_configuration(storageid, post_data)
 "Update storage configuration"
-
-

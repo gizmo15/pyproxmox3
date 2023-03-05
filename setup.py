@@ -9,7 +9,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pyproxmox3",
-    version="1.0.0_3",
+    version="1.0.1",
     author="Boris Tassou",
     author_email="boris.tassou@securmail.fr",
     description="""Handle proxmox operations via api""",
