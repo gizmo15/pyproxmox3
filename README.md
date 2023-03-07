@@ -265,9 +265,8 @@ Ex: POST_DATA = {'name':'test2.example.org', 'newid':'9002'}"
 		suspend_virtual_machine(node, vmid)
 "Suspend a virtual machine. Returns JSON"
 		
-		migrate_virtual_machine(node, vmid, target)
+		migrate_virtual_machine(node, vmid, post_data)
 		options : online=False, force=False, bwlimit=False, migration_network=False,
-				  migration_type=False, targetstorage=False, with_local_disks=False
 "Migrate a virtual machine. Returns JSON"
 
 		monitor_virtual_machine(node, vmid, command)
