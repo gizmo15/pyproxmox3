@@ -539,13 +539,25 @@ class PyProxmox:
         data_json = json.dumps(data, indent=4, sort_keys=True)
         return data_json
 
-    def migrate_virtual_machine(self, node, vmid, target, online=False, force=False):
+    def migrate_virtual_machine(self, node, vmid, target, online=False, force=False,
+                                bwlimit=False, migration_network=False, migration_type=False,
+                                targetstorage=False, with_local_disks=False):
         """Migrate a virtual machine. Returns JSON"""
         post_data = {'target': str(target)}
         if online:
             post_data['online'] = '1'
         if force:
             post_data['force'] = '1'
+        if bwlimit:
+            post_data['bwlimit'] = bwlimit
+        if migration_network:
+            post_data['migration_network'] = migration_network
+        if migration_type:
+            post_data['migration_type'] = migration_type
+        if targetstorage:
+            post_data['targetstorage'] = targetstorage
+        if with_local_disks:
+            post_data['with-local-disks'] = with_local_disks
         data = self.connect('post', 'nodes/{}/qemu/{}/migrate'.format(node, vmid), post_data)
         data_json = json.dumps(data, indent=4, sort_keys=True)
         return data_json
