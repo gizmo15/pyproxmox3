@@ -350,6 +350,13 @@ class PyProxmox:
         data_json = json.dumps(data, indent=4, sort_keys=True)
         return data_json
 
+    # Agent methods
+    def get_agent(self, node, vmid, endpoint):
+        """Get vm informations via agent. Returns JSON"""
+        data = self.connect('get', f'/nodes/{node}/qemu/{vmid}/agent/{endpoint}', None)
+        data_json = json.dumps(data, indent=4, sort_keys=True)
+        return data_json
+
     # KVM Methods
     def get_virtual_list(self, node):
         """List virtual machine. Returns JSON"""

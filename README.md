@@ -170,6 +170,10 @@ Ex: POST_DATA = {'node': 'r610'}"
 		get_lxc_rrd_data(node, vmid)
 "Read VM RRD statistics. Returns RRD"
 
+##### Agent Methods
+		get_agent(node, vmid, endpoint)
+"Get vm informations via agent. Returns JSON"
+
 ##### KVM Methods
 		get_virtual_list(node)
 "List virtual machine. Returns JSON"
